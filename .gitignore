@@ -1,7 +1,7 @@
 # Git files
-/.git
-/.gitignore
-/.gitattributes
+.git/
+.gitignore
+.gitattributes
 
 # Python bytecode and compiled files
 __pycache__/
