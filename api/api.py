@@ -39,6 +39,13 @@ async def process_video(video: UploadFile = File(...), caption: str = ""):
         if not frames:
             raise HTTPException(status_code=400, detail="Could not extract frames from video")
 
+        # Save extracted frames to frames folder
+        frames_dir = os.path.join(os.path.dirname(__file__), '..', 'frames')
+        os.makedirs(frames_dir, exist_ok=True)
+        for frame_num, frame in frames:
+            frame_path = os.path.join(frames_dir, f"{video_id}_frame{frame_num}.jpg")
+            cv2.imwrite(frame_path, frame)
+
         # 3. Process frames
         products = []
         seen_products = set()  # Track unique products to avoid duplicates
