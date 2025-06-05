@@ -1,0 +1,12 @@
+ultralytics
+opencv-python
+torch
+transformers
+faiss-cpu
+pandas
+fastapi
+uvicorn
+spacy
+openai-whisper # optional, for audio-to-text
+scikit-learn
+python-multipart # for file uploads if needed 
