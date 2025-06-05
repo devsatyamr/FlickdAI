@@ -1,2 +1,9 @@
+.gitignore
+.gitattributes
+# Python bytecode files
+*.pyc
+*.pyo
+# Compiled Python files
+*.pyd
 /__pycache__
 /venv
