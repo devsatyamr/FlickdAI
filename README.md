@@ -4,7 +4,7 @@
 ---
 
 ## 🚀 Overview
-FlickdAI is an AI-powered backend MVP designed for rapid, accurate fashion product detection and vibe analysis from video content. Built for the FlickdAI Hackathon, this backend leverages state-of-the-art computer vision (YOLO), similarity search (FAISS), and FastAPI for a seamless, scalable solution.
+Backend MVP designed for rapid, accurate fashion product detection and vibe analysis from video content. Built for the FlickdAI Hackathon, this backend leverages state-of-the-art computer vision (YOLO), similarity search (FAISS), and FastAPI for a seamless, scalable solution.
 
 ---
 
