@@ -109,6 +109,7 @@ Flickd/
 4. Vibe is classified based on caption and detected products.
 5. Download the structured JSON output with all results.
 
+Demo Link : https://www.loom.com/share/c2993e5751c541b599d95354e1699286
 ---
 
 ## 📝 Example API Usage
