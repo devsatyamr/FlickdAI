@@ -1,0 +1,101 @@
+{
+  "video_id": "b1d8a9cb-a60e-4570-8412-0cb33f24bbef",
+  "vibes": [
+    "Cottagecore",
+    "Boho",
+    "Party Glam"
+  ],
+  "products": [
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "17256",
+      "confidence": 0.68
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "16050",
+      "confidence": 0.63
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "17264",
+      "confidence": 0.63
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "116106",
+      "confidence": 0.62
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "15777",
+      "confidence": 0.64
+    },
+    {
+      "type": "dress",
+      "color": "brown",
+      "match_type": "exact",
+      "matched_product_id": "16880",
+      "confidence": 0.64
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "17119",
+      "confidence": 0.62
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "97544",
+      "confidence": 0.66
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "17189",
+      "confidence": 0.66
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "42030",
+      "confidence": 0.61
+    },
+    {
+      "type": "dress",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "17249",
+      "confidence": 0.63
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "97547",
+      "confidence": 0.62
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "97557",
+      "confidence": 0.63
+    }
+  ]
+}

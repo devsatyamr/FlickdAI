@@ -1,164 +1,147 @@
-<!-- Flickd: AI-Powered Fashion Object Detection and Video Frame Analysis -->
+# Backend MVP for FlickdAI Hackathon
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/placeholder/flickd-logo.png" alt="Flickd Logo" width="200"/>
-</p>
 
 ---
 
-# Flickd: AI-Powered Fashion Object Detection & Video Frame Analysis
-
-Flickd is a cutting-edge AI application for the fashion industry, designed to automatically detect, classify, and analyze fashion items in both images and videos. Built on top of the powerful YOLO object detection framework, Flickd enables smart frame extraction, robust object recognition, and seamless integration for fashion tech, e-commerce, and content analysis workflows.
-
----
-
-## 🚀 Features
-
-- **🎯 Fashion Object Detection:**
-  - Detects and classifies fashion items (tops, dresses, pants, shoes, accessories, and more) in images and video frames using a YOLO-based deep learning model.
-- **🧠 Smart Frame Extraction:**
-  - Efficiently samples frames from videos, skipping near-duplicate frames to optimize for unique and relevant content.
-- **🔗 Extensible Class Mapping:**
-  - Easily update or expand the set of fashion categories by modifying a single dictionary in the code.
-- **🛠️ Modular & Clean API:**
-  - Well-structured Python modules for easy integration, extension, and maintenance.
-- **📦 Ready for Integration:**
-  - Designed for use in larger pipelines, web services, or as a standalone tool.
+## 🚀 Overview
+FlickdAI is an AI-powered backend MVP designed for rapid, accurate fashion product detection and vibe analysis from video content. Built for the FlickdAI Hackathon, this backend leverages state-of-the-art computer vision (YOLO), similarity search (FAISS), and FastAPI for a seamless, scalable solution.
 
 ---
 
-## 🗂️ Project Structure
+## 🗂️ Filesystem & Directory Map
 
-```text
+```
 Flickd/
-├── api/
-│   ├── detection.py      # Object detection & frame extraction logic
-│   ├── matching.py      # Matching logic for detected items (extendable)
-│   ├── utils.py         # Utility functions
-│   ├── vibe.py          # Vibe/category logic (extendable)
-│   └── __pycache__/     # Compiled Python files
-├── data/                # Data files (e.g., FAISS index, product IDs)
-├── frames/              # Extracted frames & related metadata
-├── models/              # YOLO model weights & training artifacts
-├── requirements.txt     # Python dependencies
-├── vibeslist.json       # List of vibes or categories
-└── .gitignore           # Git ignore rules
+├── api/           # FastAPI app, detection, and core logic
+│   ├── api.py         # Main FastAPI application
+│   ├── detection.py   # YOLO-based detection logic
+│   ├── matching.py    # Product matching using FAISS
+│   ├── vibe.py        # Vibe classification
+│   ├── utils.py       # Helper utilities
+│   └── __pycache__/   # Python cache files
+├── data/          # Data for similarity search
+│   ├── faiss_index.bin    # FAISS index for fast product search
+│   └── product_ids.npy    # Numpy array of product IDs (maps index to product)
+├── frames/        # Extracted frames from uploaded videos
+├── models/        # YOLO model weights and training artifacts
+│   └── best.pt        # Trained YOLO model
+├── outputs/       # JSON outputs for processed videos
+├── videos/        # Organizer-provided video clips
+├── requirements.txt   # Python dependencies
+├── venv/          # Virtual environment (recommended)
+├── README.md      # This documentation
+├── demo.mp4       # Demo video of the full MVP process
+└── vibeslist.json # List of vibes/categories
 ```
 
 ---
 
-## 🧩 How It Works
+## ⚡ Quick Setup
 
-### 1. Object Detection
-- The `ObjectDetector` class loads a YOLO model and defines a mapping from class indices to fashion categories.
-- The `detect` method processes an image, returning detected objects with mapped class names and confidence scores.
-- Easily extend the `class_names` dictionary to support new categories.
-
-### 2. Frame Extraction
-- The `extract_frames` function samples frames from a video at a specified interval, skipping frames that are too similar to the previous one (to avoid redundancy).
-- Returns a list of `(frame number, frame)` tuples, up to a maximum number of frames.
-- Smart difference thresholding ensures only unique frames are kept.
-
-### 3. Customization
-- **Add/Modify Fashion Categories:**
-  - Update the `class_names` dictionary in `api/detection.py`.
-- **Change Model Weights:**
-  - Replace the YOLO weights in `models/best.pt` with your own trained model.
-- **Integrate with Other Systems:**
-  - Use the modular API to plug Flickd into web apps, batch pipelines, or research tools.
-
----
-
-## 🛠️ Setup & Installation
-
-1. **Clone the repository:**
+1. **Clone the repository**
    ```sh
-   git clone <your-repo-url>
-   cd Flickd
+   git clone https://github.com/devsatyamr/FlickdAI
+   cd FlickdAI
    ```
-2. **Install dependencies:**
+2. **Create and activate a virtual environment**
+   ```sh
+   python -m venv venv
+   .\venv\Scripts\activate  # On Windows
+   # Or
+   source venv/bin/activate  # On Mac/Linux
+   ```
+3. **Install dependencies**
    ```sh
    pip install -r requirements.txt
    ```
-3. **Download/Place YOLO model weights:**
-   - Place your trained YOLO weights in `models/best.pt`.
+4. **Run the FastAPI server**
+   ```sh
+   uvicorn api.api:app --reload
+   ```
+5. **Upload a video for processing**
+   - Use the `/process_video/` endpoint (e.g., via Swagger UI at `http://127.0.0.1:8000/docs`)
+   - Upload your `.mp4` file and (optionally) a caption
+   - Download the JSON output from the response or from the `outputs/` folder
 
 ---
 
-## 💡 Usage Examples
+## 🏗️ Working Process (End-to-End)
 
-### Detect Fashion Items in an Image
-```python
-from api.detection import ObjectDetector
-
-detector = ObjectDetector('models/best.pt')
-results = detector.detect('path/to/image.jpg')
-for r in results:
-    for box in r.boxes:
-        print(f"Detected: {box.cls_name} (confidence: {box.conf[0].item():.2f})")
-```
-
-### Extract Unique Frames from a Video
-```python
-from api.detection import extract_frames
-
-frames = extract_frames('path/to/video.mp4', interval=30, max_frames=20)
-for frame_num, frame in frames:
-    # Process or save frame
-    pass
-```
-
-### Full Pipeline Example
-```python
-from api.detection import ObjectDetector, extract_frames
-
-detector = ObjectDetector('models/best.pt')
-frames = extract_frames('path/to/video.mp4')
-for frame_num, frame in frames:
-    results = detector.detect(frame)
-    # Process results for each frame
-```
+1. **Image Dataset Downloading**
+   - Gather a large, labeled fashion image dataset for training the YOLO model.
+2. **YOLO Model Training**
+   - Train YOLO on the dataset to detect fashion categories (e.g., tops, dresses, shoes).
+   - Save the trained weights as `models/best.pt`.
+3. **Product Embedding & FAISS Indexing**
+   - Extract feature embeddings for each product image using a suitable model.
+   - Build a FAISS index (`data/faiss_index.bin`) for fast similarity search.
+   - Store product IDs in `data/product_ids.npy` to map FAISS results to real products.
+4. **FastAPI Backend**
+   - Handles video uploads, frame extraction, detection, product matching, and vibe classification.
+5. **Video Processing Pipeline**
+   - Video is uploaded → frames are extracted (smart sampling) → YOLO detects products in each frame.
+   - Each detected product is cropped, its dominant color is analyzed, and an embedding is generated.
+   - FAISS index is queried for similar products; results are scored for confidence.
+   - Vibe classifier analyzes the caption and detected products to assign a vibe.
+6. **Output**
+   - JSON output includes detected products, their types, colors, match confidence, and vibe.
+   - Output is downloadable or viewable via API.
 
 ---
 
-## 📚 Documentation
+## 📦 Folder/Component Roles
 
-### `api/detection.py`
-- **ObjectDetector**
-  - `__init__(model_path)`: Loads YOLO model from the given path.
-  - `detect(image)`: Detects fashion objects in the image, returns results with class names and confidence.
-- **extract_frames**
-  - `extract_frames(video_path, interval=30, max_frames=20)`: Extracts unique frames from a video, skipping near-duplicates.
-
-### Extending Flickd
-- Add new detection logic, matching algorithms, or vibe analysis by creating new modules in the `api/` directory.
-- Update `requirements.txt` for new dependencies.
+- **api/**: All backend logic (FastAPI app, detection, matching, vibe analysis)
+- **data/**: FAISS index and product ID mapping for similarity search
+- **frames/**: Temporary storage for frames extracted from videos
+- **models/**: YOLO model weights for detection
+- **outputs/**: JSON results for each processed video
+- **videos/**: Raw video clips for processing
+- **venv/**: Python virtual environment (prevents dependency conflicts)
 
 ---
 
-## 🤝 Contributing
+## 🎬 Demo Process
 
-We welcome contributions! To get started:
-- Fork the repository
-- Create a new branch for your feature or bugfix
-- Submit a pull request with a clear description
-
-For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-## 📄 License
-This project is for educational and hackathon use. For commercial or production use, please contact the author.
+1. Upload a video via the `/process_video/` endpoint.
+2. Frames are extracted and analyzed for fashion products.
+3. Each product is matched to the closest item in the FAISS index.
+4. Vibe is classified based on caption and detected products.
+5. Download the structured JSON output with all results.
 
 ---
 
-## 🙏 Acknowledgements
-- [Ultralytics YOLO](https://github.com/ultralytics/ultralytics)
-- OpenCV, NumPy
-- Hackathon organizers and the open-source community
+## 📝 Example API Usage
+
+- **Start the server:**
+  ```sh
+  uvicorn api.api:app --reload
+  ```
+- **Upload a video:**
+  - Go to `http://127.0.0.1:8000/docs`
+  - Use `/process_video/` to upload your `.mp4` file
+- **Get results:**
+  - Download the JSON output from the API response or from the `outputs/` folder
+
+---
+
+## 🧠 Key Concepts
+- **YOLO Model:** Detects and classifies fashion items in video frames.
+- **FAISS Index:** Enables fast, scalable similarity search for product matching.
+- **Product IDs:** Map FAISS search results to real product catalog entries.
+- **Vibe Classifier:** Assigns a vibe to the video based on caption and detected products.
+- **Confidence Score:** Indicates how closely a detected product matches the catalog.
+
+---
+
+## 👨‍💻 Author & Copyright
+
+**Devsatyam Ray**  
+[LinkedIn](https://linkedin.com/in/devsatyamr)  
+devsatyamr@gmail.com
 
 ---
 
 <p align="center">
-  <em>For more details, see the code in the <code>api/</code> directory and the competition document.</em>
+  <b>Made with ❤️ for the FlickdAI Hackathon</b>
 </p>

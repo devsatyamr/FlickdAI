@@ -1,0 +1,94 @@
+{
+  "video_id": "457bae7b-f631-4425-b2d3-66ba43d2ed96",
+  "vibes": [
+    "Streetcore",
+    "Clean Girl",
+    "Party Glam"
+  ],
+  "products": [
+    {
+      "type": "top",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "15001",
+      "confidence": 0.59
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "14998",
+      "confidence": 0.58
+    },
+    {
+      "type": "pants",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "17109",
+      "confidence": 0.64
+    },
+    {
+      "type": "pants",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "118442",
+      "confidence": 0.62
+    },
+    {
+      "type": "dress",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "15311",
+      "confidence": 0.59
+    },
+    {
+      "type": "top",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "17134",
+      "confidence": 0.61
+    },
+    {
+      "type": "top",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "15209",
+      "confidence": 0.62
+    },
+    {
+      "type": "dress",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "42037",
+      "confidence": 0.6
+    },
+    {
+      "type": "top",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "42037",
+      "confidence": 0.59
+    },
+    {
+      "type": "pants",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "16050",
+      "confidence": 0.62
+    },
+    {
+      "type": "dress",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "14994",
+      "confidence": 0.58
+    },
+    {
+      "type": "top",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "14994",
+      "confidence": 0.58
+    }
+  ]
+}

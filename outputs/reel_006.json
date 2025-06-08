@@ -1,0 +1,59 @@
+{
+  "video_id": "eae728eb-dff3-427f-9891-2b0da848498f",
+  "vibes": [
+    "Clean Girl",
+    "Streetcore",
+    "Party Glam"
+  ],
+  "products": [
+    {
+      "type": "dress",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "17014",
+      "confidence": 0.69
+    },
+    {
+      "type": "dress",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "42080",
+      "confidence": 0.64
+    },
+    {
+      "type": "pants",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "17257",
+      "confidence": 0.63
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "14994",
+      "confidence": 0.68
+    },
+    {
+      "type": "pants",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "15034",
+      "confidence": 0.63
+    },
+    {
+      "type": "top",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "16110",
+      "confidence": 0.68
+    },
+    {
+      "type": "pants",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "16867",
+      "confidence": 0.63
+    }
+  ]
+}

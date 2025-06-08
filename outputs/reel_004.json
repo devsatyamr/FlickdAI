@@ -1,0 +1,80 @@
+{
+  "video_id": "cb8dc5f5-85dc-4861-9488-6f286f9535c5",
+  "vibes": [
+    "Clean Girl",
+    "Cottagecore",
+    "Coquette"
+  ],
+  "products": [
+    {
+      "type": "dress",
+      "color": "white",
+      "match_type": "exact",
+      "matched_product_id": "16828",
+      "confidence": 0.65
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "16816",
+      "confidence": 0.62
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "15467",
+      "confidence": 0.65
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "16858",
+      "confidence": 0.64
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "16110",
+      "confidence": 0.63
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "16806",
+      "confidence": 0.64
+    },
+    {
+      "type": "top",
+      "color": "white",
+      "match_type": "exact",
+      "matched_product_id": "17281",
+      "confidence": 0.63
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "15748",
+      "confidence": 0.62
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "15487",
+      "confidence": 0.64
+    },
+    {
+      "type": "dress",
+      "color": "gray",
+      "match_type": "exact",
+      "matched_product_id": "16704",
+      "confidence": 0.63
+    }
+  ]
+}

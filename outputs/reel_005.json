@@ -1,0 +1,66 @@
+{
+  "video_id": "c096dc84-6436-4000-9ee2-a4ec95dabf14",
+  "vibes": [
+    "Cottagecore",
+    "Party Glam",
+    "Coquette"
+  ],
+  "products": [
+    {
+      "type": "top",
+      "color": "white",
+      "match_type": "exact",
+      "matched_product_id": "16110",
+      "confidence": 0.59
+    },
+    {
+      "type": "dress",
+      "color": "white",
+      "match_type": "exact",
+      "matched_product_id": "15345",
+      "confidence": 0.6
+    },
+    {
+      "type": "dress",
+      "color": "white",
+      "match_type": "exact",
+      "matched_product_id": "15326",
+      "confidence": 0.66
+    },
+    {
+      "type": "dress",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "15326",
+      "confidence": 0.59
+    },
+    {
+      "type": "dress",
+      "color": "white",
+      "match_type": "exact",
+      "matched_product_id": "16584",
+      "confidence": 0.59
+    },
+    {
+      "type": "dress",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "16584",
+      "confidence": 0.6
+    },
+    {
+      "type": "dress",
+      "color": "white",
+      "match_type": "exact",
+      "matched_product_id": "14994",
+      "confidence": 0.58
+    },
+    {
+      "type": "top",
+      "color": "black",
+      "match_type": "exact",
+      "matched_product_id": "15117",
+      "confidence": 0.69
+    }
+  ]
+}
